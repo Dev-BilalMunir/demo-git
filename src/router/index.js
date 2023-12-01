@@ -8,6 +8,13 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+      children: [
+        {
+            path: '/',
+            name: 'helloworld',
+            component: () => import('@/components/HomeWorld.vue')
+        }
+    ]
     },
     {
       path: '/about',
